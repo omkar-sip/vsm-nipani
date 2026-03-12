@@ -1,0 +1,37 @@
+/* ── BOOKING FLOW ── */
+.booking-card {
+  background: white; margin: 0 16px 14px; border-radius: 20px; padding: 20px;
+  box-shadow: var(--shadow-card); border: 1.5px solid var(--border);
+}
+.booking-card h3 { font-size: 17px; font-weight: 800; margin-bottom: 14px; }
+.quick-choice { display: flex; flex-wrap: wrap; gap: 8px; }
+.qc-btn {
+  background: var(--surface); border: 2px solid var(--border); border-radius: 12px;
+  padding: 10px 14px; font-size: 13px; font-weight: 600; cursor: pointer;
+  font-family: inherit; transition: all .2s; color: var(--text-main);
+}
+.qc-btn.sel { background: #FFF5EC; border-color: var(--saffron); color: var(--saffron); }
+.qc-btn:active { transform: scale(0.97); }
+
+.price-range { display: flex; gap: 8px; align-items: center; margin-top: 12px; }
+.price-opt {
+  flex: 1; border: 2px solid var(--border); border-radius: 12px; padding: 12px 10px;
+  text-align: center; cursor: pointer; transition: all .2s; background: white;
+}
+.price-opt.sel { border-color: var(--sky); background: #EEF5FF; }
+.price-opt .po-val { font-size: 15px; font-weight: 800; }
+.price-opt .po-lab { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+
+.location-detect {
+  background: var(--surface); border-radius: 14px; padding: 14px;
+  display: flex; align-items: center; gap: 12px; cursor: pointer;
+}
+
+.dynamic-price-card {
+  margin: 0 16px 16px; background: linear-gradient(135deg, #0F1923, #1A2940);
+  border-radius: 18px; padding: 16px; color: white;
+}
+.price-demand-hint {
+  background: rgba(255,107,0,0.15); border-radius: 10px; padding: 10px 12px;
+  margin-top: 12px; font-size: 13px;
+}

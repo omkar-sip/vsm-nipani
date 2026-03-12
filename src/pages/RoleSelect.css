@@ -1,0 +1,106 @@
+/* ── ROLE SELECT ── */
+.role-gradient-header {
+  background: linear-gradient(135deg, var(--saffron), var(--green));
+  padding: var(--sp-page) var(--sp-page) 32px;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .role-gradient-header {
+    border-radius: 0 0 24px 24px;
+    margin-bottom: 20px;
+  }
+}
+.role-gradient-title {
+  font-size: var(--fs-page-title);
+  font-weight: 800;
+  color: white;
+}
+.role-gradient-sub {
+  font-size: var(--fs-body);
+  color: rgba(255,255,255,0.85);
+  margin-top: 4px;
+}
+#role-select {
+  background: var(--warm-white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.role-cards {
+  padding: var(--sp-page);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.role-card {
+  background: white;
+  border-radius: var(--radius-card);
+  padding: var(--sp-card);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  cursor: pointer;
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow-card);
+  transition: all .2s;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+@media (max-width: 767px) {
+  .role-card {
+    flex-direction: row;
+    align-items: center;
+  }
+  .role-card-content {
+     display: flex;
+     flex-direction: column;
+  }
+}
+.role-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+}
+.role-card.worker::before { background: var(--saffron); }
+.role-card.employer::before { background: var(--sky); }
+.role-card.customer::before { background: var(--green); }
+
+.role-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+.role-card.worker:hover { border-color: var(--saffron); }
+.role-card.employer:hover { border-color: var(--sky); }
+.role-card.customer:hover { border-color: var(--green); }
+
+.role-card:active { transform: scale(0.98); }
+.role-card.worker:active { background: #FFF5EC; }
+.role-card.employer:active { background: #EEF5FF; }
+.role-card.customer:active { background: #EEFBEE; }
+
+.role-icon { font-size: 42px; line-height: 1; }
+.role-info { flex: 1; }
+.role-info h3 { font-size: var(--fs-card-title); font-weight: 800; }
+.role-info p { font-size: var(--fs-body); color: var(--text-muted); margin-top: 6px; line-height: 1.4; }
+.role-arrow { 
+  margin-left: auto; 
+  font-size: 24px; 
+  color: var(--text-muted);
+  transition: transform .2s;
+}
+.role-card:hover .role-arrow {
+  transform: translateX(4px);
+}
+
+.role-footer {
+  padding: var(--sp-page);
+  margin-top: auto;
+  text-align: center;
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+}

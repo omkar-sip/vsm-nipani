@@ -1,0 +1,36 @@
+/* ── BOOKING CONFIRM ── */
+.confirm-animation { text-align: center; padding: 20px 0; }
+.confirm-circle {
+  width: 80px; height: 80px; border-radius: 50%; background: #F0FDF4; margin: 0 auto 16px;
+  display: flex; align-items: center; justify-content: center; font-size: 40px;
+  border: 3px solid var(--green);
+}
+.confirm-title { font-size: 22px; font-weight: 800; color: var(--green); }
+.confirm-sub { font-size: 14px; color: var(--text-muted); margin-top: 6px; }
+
+/* Tracking */
+.tracking-card {
+  background: white; border-radius: 18px; padding: 20px; margin-top: 20px;
+  box-shadow: var(--shadow-card); border: 1.5px solid var(--border);
+}
+.tracking-row { display: flex; align-items: center; gap: 8px; margin: 20px 0; }
+.tracking-step { flex: 1; text-align: center; }
+.tracking-dot {
+  width: 28px; height: 28px; border-radius: 50%; margin: 0 auto 6px;
+  display: flex; align-items: center; justify-content: center; font-size: 14px;
+}
+.tracking-dot.done { background: var(--green); color: white; }
+.tracking-dot.current { background: var(--saffron); color: white; animation: pulse 1.5s infinite; }
+.tracking-dot.pending { background: var(--border); color: var(--text-muted); }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+.tracking-line { flex: 0.5; height: 2px; background: var(--border); margin-top: -20px; }
+.tracking-line.done { background: var(--green); }
+
+.booking-info-card {
+  background: white; border-radius: 18px; padding: 16px;
+  box-shadow: var(--shadow-card); border: 1.5px solid var(--border);
+}
+.summary-row {
+  display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px;
+}
+.summary-row:last-child { margin-bottom: 0; }

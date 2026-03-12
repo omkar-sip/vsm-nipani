@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');
+@import './styles/variables.css';
+
+/* ═══════════════════════════════════════
+   GLOBAL RESET
+   ═══════════════════════════════════════ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--surface);
+  color: var(--text-main);
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════
+   APP SHELL — Full width on all screens
+   ═══════════════════════════════════════ */
+.app-shell {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ═══════════════════════════════════════
+   SCREEN BASE — No width constraints
+   ═══════════════════════════════════════ */
+.screen {
+  display: none;
+  min-height: 100vh;
+  min-height: 100dvh;
+  flex-direction: column;
+  animation: fadeIn .3s ease;
+  width: 100%;
+}
+.screen.active {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════
+   CONTENT CONTAINERS — Responsive widths
+   ═══════════════════════════════════════ */
+.scroll-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 80px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Responsive container — constrains content width on large screens */
+.r-container {
+  width: 100%;
+  padding: 0 var(--sp-page);
+  margin: 0 auto;
+}
+
+.divider {
+  height: 8px;
+  background: var(--surface);
+  margin: 8px 0;
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE GRID UTILITIES
+   ═══════════════════════════════════════ */
+.grid-auto {
+  display: grid;
+  gap: var(--sp-gap);
+  grid-template-columns: 1fr;
+}
+
+/* ═══════════════════════════════════════
+   SHARED HELPERS
+   ═══════════════════════════════════════ */
+.flex-row { display: flex; align-items: center; }
+.topbar-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--saffron);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform .15s;
+}
+.topbar-avatar:hover {
+  transform: scale(1.08);
+}
+
+/* Shared submit button */
+.submit-btn {
+  width: 100%;
+  background: var(--saffron);
+  color: white;
+  border: none;
+  border-radius: var(--radius-btn);
+  padding: 16px;
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 14px;
+  box-shadow: 0 4px 20px rgba(255,107,0,0.3);
+  transition: transform .15s, box-shadow .15s;
+}
+.submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 28px rgba(255,107,0,0.4);
+}
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* Shared hire/profile buttons */
+.btn-hire {
+  flex: 1;
+  background: var(--sky);
+  color: white;
+  border: none;
+  border-radius: var(--radius-btn);
+  padding: 11px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform .15s, background .15s;
+}
+.btn-hire:hover { background: #1565C0; transform: translateY(-1px); }
+
+.btn-profile {
+  background: var(--surface);
+  color: var(--text-main);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-btn);
+  padding: 11px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background .15s, border-color .15s;
+}
+.btn-profile:hover { background: var(--border); border-color: var(--text-muted); }
+
+/* ═══════════════════════════════════════
+   TABLET — 640px+
+   ═══════════════════════════════════════ */
+@media (min-width: 640px) {
+  .r-container {
+    padding: 0 32px;
+  }
+
+  .grid-auto {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ═══════════════════════════════════════
+   LAPTOP — 1024px+
+   ═══════════════════════════════════════ */
+@media (min-width: 1024px) {
+  body {
+    background: #EFEAE4;
+    background-image:
+      radial-gradient(circle at 15% 25%, rgba(255,107,0,0.03) 0%, transparent 50%),
+      radial-gradient(circle at 85% 75%, rgba(19,136,8,0.03) 0%, transparent 50%);
+  }
+
+  .app-shell {
+    flex-direction: row;
+  }
+
+  /* Screen takes full remaining width after sidebar */
+  .screen {
+    margin-left: var(--sidebar-width);
+    min-height: 100vh;
+  }
+
+  .r-container {
+    max-width: 1100px;
+    padding: 0 40px;
+  }
+
+  .scroll-content {
+    padding-bottom: 32px;
+  }
+}
+
+/* ═══════════════════════════════════════
+   DESKTOP — 1440px+
+   ═══════════════════════════════════════ */
+@media (min-width: 1440px) {
+  .r-container {
+    max-width: var(--content-max);
+    padding: 0 48px;
+  }
+
+  .grid-auto {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

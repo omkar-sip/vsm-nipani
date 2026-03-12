@@ -1,0 +1,98 @@
+/* ── SPLASH SCREEN ── */
+#splash {
+  background: linear-gradient(160deg, #FF6B00 0%, #FF8C38 40%, #138808 100%);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 100vh;
+  display: flex;
+}
+.splash-logo {
+  width: 90px;
+  height: 90px;
+  background: white;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 44px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+.splash-title {
+  font-size: var(--fs-hero);
+  font-weight: 800;
+  color: white;
+  letter-spacing: -1px;
+}
+.splash-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.splash-tagline {
+  font-size: var(--fs-card-title);
+  color: rgba(255,255,255,0.95);
+  text-align: center;
+  max-width: 400px;
+  line-height: 1.5;
+  margin-top: 8px;
+  padding: 0 20px;
+}
+.lang-pills {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.lang-pill {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 1.5px solid rgba(255,255,255,0.5);
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: var(--fs-body);
+  cursor: pointer;
+  transition: all .2s;
+}
+.lang-pill:hover {
+  background: rgba(255,255,255,0.3);
+}
+.lang-pill.sel {
+  background: white;
+  color: var(--saffron);
+  border-color: white;
+  font-weight: 700;
+}
+.splash-btn {
+  margin-top: 24px;
+  background: white;
+  color: var(--saffron);
+  border: none;
+  border-radius: var(--radius-btn);
+  padding: 16px 48px;
+  font-size: var(--fs-card-title);
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  font-family: inherit;
+  transition: transform .15s, box-shadow .15s;
+}
+.splash-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+.splash-btn:active {
+  transform: scale(0.97);
+}
+
+/* ── DESKTOP SPLASH ── */
+@media (min-width: 1024px) {
+  #splash {
+    flex-direction: row;
+    justify-content: center;
+    gap: 80px;
+  }
+}

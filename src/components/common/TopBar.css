@@ -1,0 +1,69 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+  padding: 14px var(--sp-page);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-bottom: 1px solid var(--border);
+}
+.topbar-back {
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--text-main);
+  background: none;
+  border: none;
+  padding: 4px 8px 4px 0;
+  font-family: var(--font-primary);
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  min-height: 36px;
+  border-radius: 10px;
+  transition: background .15s, transform .15s;
+}
+.topbar-back:hover {
+  background: var(--surface);
+  transform: translateX(-2px);
+}
+.topbar-back:active {
+  background: var(--border);
+}
+.topbar-title {
+  font-size: var(--fs-section-title);
+  font-weight: 800;
+  flex: 1;
+}
+.topbar-notif {
+  font-size: 22px;
+  cursor: pointer;
+  position: relative;
+  padding: 4px;
+  border-radius: 8px;
+  transition: background .15s;
+}
+.topbar-notif:hover {
+  background: var(--surface);
+}
+.notif-dot {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 8px;
+  height: 8px;
+  background: var(--red);
+  border-radius: 50%;
+  border: 1.5px solid white;
+}
+
+/* ── Desktop: hide back on sidebar-enabled pages ── */
+@media (min-width: 1024px) {
+  .topbar {
+    padding: 16px 40px;
+  }
+}

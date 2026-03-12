@@ -1,0 +1,77 @@
+/* ── CUSTOMER HOME ── */
+.cust-hero {
+  background: linear-gradient(135deg, var(--saffron), var(--saffron-light));
+  padding: 24px var(--sp-page) 32px;
+}
+.search-bar {
+  margin: -16px 0 24px; 
+  background: white; border-radius: 16px; border: 2px solid var(--border);
+  display: flex; align-items: center; gap: 10px; padding: 14px 16px;
+  box-shadow: var(--shadow-card);
+  max-width: 800px;
+  position: relative;
+  z-index: 10;
+  transition: box-shadow .2s;
+}
+.search-bar:hover { box-shadow: var(--shadow-card-hover); }
+.search-bar input {
+  border: none; outline: none; flex: 1; font-size: var(--fs-body); font-family: inherit; background: transparent;
+}
+.search-icon { font-size: 20px; color: var(--text-muted); }
+.search-mic { font-size: 20px; color: var(--saffron); cursor: pointer; transition: transform .2s; }
+.search-mic:hover { transform: scale(1.1); }
+
+.category-scroll { 
+  display: flex; gap: var(--sp-gap); overflow-x: auto; 
+  padding: 8px var(--sp-page) 16px; scrollbar-width: none; 
+}
+@media (min-width: 768px) {
+  .category-scroll {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+}
+.category-scroll::-webkit-scrollbar { display: none; }
+.cat-btn { display: flex; flex-direction: column; align-items: center; gap: 6px; flex-shrink: 0; cursor: pointer; }
+.cat-btn:hover .cat-circle { border-color: var(--border); transform: scale(1.02); }
+.cat-circle {
+  width: clamp(60px, 8vw, 72px); height: clamp(60px, 8vw, 72px); 
+  border-radius: 16px; display: flex; align-items: center;
+  justify-content: center; font-size: clamp(26px, 4vw, 32px); border: 2.5px solid transparent; transition: all .2s;
+}
+.cat-btn.active .cat-circle { border-color: var(--saffron); transform: scale(1.05); }
+.cat-label { font-size: var(--fs-caption); font-weight: 600; color: var(--text-main); text-align: center; max-width: 72px; }
+
+/* Worker Match Cards */
+.worker-match {
+  background: white; border-radius: var(--radius-card); padding: var(--sp-card);
+  box-shadow: var(--shadow-card); border: 1.5px solid var(--border);
+  display: flex; align-items: center; gap: 14px; cursor: pointer; transition: all .2s;
+  height: 100%;
+}
+.worker-match:hover { transform: translateY(-3px); box-shadow: var(--shadow-card-hover); }
+.worker-match:active { transform: scale(0.98); }
+.wm-avatar {
+  width: 56px; height: 56px; border-radius: 14px; font-size: 26px;
+  display: flex; align-items: center; justify-content: center; background: var(--surface); flex-shrink: 0;
+}
+.wm-info { flex: 1; }
+.wm-name { font-size: var(--fs-card-title); font-weight: 700; }
+.wm-skills { font-size: var(--fs-small); color: var(--text-muted); }
+.wm-right { text-align: right; }
+.wm-price { font-size: var(--fs-body); font-weight: 800; color: var(--saffron); }
+.wm-eta { font-size: var(--fs-caption); color: var(--green); font-weight: 600; }
+.wm-verified { font-size: var(--fs-caption); color: var(--sky); display: flex; align-items: center; gap: 4px; margin-top: 4px; }
+
+.post-job-btn {
+  margin: var(--sp-page); background: var(--saffron); color: white; border: none;
+  border-radius: var(--radius-btn); padding: 16px; font-size: var(--fs-card-title); font-weight: 800;
+  cursor: pointer; font-family: inherit; width: calc(100% - calc(var(--sp-page) * 2));
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  box-shadow: 0 4px 20px rgba(255,107,0,0.3);
+  max-width: 400px;
+}
+@media (min-width: 768px) {
+  .post-job-btn { margin-left: auto; margin-right: auto; }
+}
+.post-job-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(255,107,0,0.4); }

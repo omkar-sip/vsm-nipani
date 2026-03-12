@@ -1,0 +1,55 @@
+/* ═══════════════════════════════════════════════
+   DakshBharat — Design System Variables
+   Responsive tokens with fluid typography
+   ═══════════════════════════════════════════════ */
+
+:root {
+  /* ── Brand Colors ── */
+  --saffron: #FF6B00;
+  --saffron-light: #FF8C38;
+  --green: #138808;
+  --green-light: #1CAD0A;
+  --blue: #000080;
+  --sky: #1A73E8;
+  --sky-light: #4A9FFF;
+  --cream: #FFF8EE;
+  --warm-white: #FFFDF9;
+  --dark: #0F1923;
+  --card-bg: #FFFFFF;
+  --text-main: #1A1A2E;
+  --text-muted: #6B7280;
+  --gold: #F59E0B;
+  --gold-light: #FCD34D;
+  --red: #EF4444;
+  --purple: #7C3AED;
+  --surface: #F7F3EE;
+  --border: #E8DDD0;
+
+  /* ── Shadows ── */
+  --shadow: 0 4px 24px rgba(255,107,0,0.10);
+  --shadow-card: 0 2px 12px rgba(0,0,0,0.08);
+  --shadow-card-hover: 0 8px 32px rgba(0,0,0,0.12);
+  --shadow-elevated: 0 12px 48px rgba(0,0,0,0.10);
+
+  /* ── Typography — Fluid with clamp() ── */
+  --font-primary: 'Baloo 2', 'Noto Sans Devanagari', sans-serif;
+  --fs-hero: clamp(28px, 4vw, 44px);
+  --fs-page-title: clamp(22px, 3vw, 34px);
+  --fs-section-title: clamp(16px, 2vw, 22px);
+  --fs-card-title: clamp(15px, 1.8vw, 20px);
+  --fs-body: clamp(14px, 1.4vw, 16px);
+  --fs-small: clamp(12px, 1.2vw, 14px);
+  --fs-caption: clamp(10px, 1vw, 12px);
+
+  /* ── Spacing — Responsive ── */
+  --sp-page: clamp(16px, 3vw, 40px);
+  --sp-section: clamp(12px, 2vw, 24px);
+  --sp-card: clamp(14px, 2vw, 24px);
+  --sp-gap: clamp(10px, 1.5vw, 20px);
+
+  /* ── Layout ── */
+  --sidebar-width: 240px;
+  --content-max: 1400px;
+  --radius-card: clamp(16px, 2vw, 24px);
+  --radius-btn: clamp(12px, 1.5vw, 16px);
+}

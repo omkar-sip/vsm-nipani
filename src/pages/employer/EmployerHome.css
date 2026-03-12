@@ -1,0 +1,64 @@
+/* ── EMPLOYER HOME ── */
+.emp-hero {
+  background: linear-gradient(135deg, var(--sky) 0%, #1A3A7A 100%);
+  padding: 24px var(--sp-page) 32px; 
+  color: white;
+}
+.emp-hero h2 { font-size: var(--fs-page-title); font-weight: 800; }
+.emp-hero p { font-size: var(--fs-small); opacity: 0.8; margin-top: 4px; }
+.emp-stats { display: flex; gap: var(--sp-gap); margin-top: 20px; flex-wrap: wrap; }
+.emp-stat {
+  flex: 1; min-width: 90px; background: rgba(255,255,255,0.15); border-radius: 12px; padding: 14px 10px; text-align: center;
+}
+.emp-stat .v { font-size: var(--fs-card-title); font-weight: 800; }
+.emp-stat .l { font-size: var(--fs-caption); opacity: 0.8; margin-top: 4px; }
+
+/* Applicant Cards */
+.applicant-card {
+  background: white; border-radius: var(--radius-card); padding: var(--sp-card);
+  box-shadow: var(--shadow-card); border: 1.5px solid var(--border);
+  transition: transform .2s, box-shadow .2s;
+  display: flex; flex-direction: column; height: 100%;
+}
+.applicant-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-card-hover); }
+.app-top { display: flex; align-items: flex-start; gap: 14px; }
+.app-avatar {
+  width: 56px; height: 56px; border-radius: 14px; background: var(--surface);
+  font-size: 26px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.app-info { flex: 1; }
+.app-name { font-size: var(--fs-card-title); font-weight: 700; }
+.app-loc { font-size: var(--fs-small); margin-top: 4px; color: var(--text-muted); }
+.app-score { text-align: right; }
+.app-score .score-val { font-size: var(--fs-page-title); font-weight: 800; color: var(--saffron); }
+.app-score .score-lab { font-size: var(--fs-caption); color: var(--text-muted); }
+.app-actions { display: flex; gap: 10px; margin-top: auto; padding-top: 16px; }
+
+/* Quick Choice for form */
+.quick-choice { display: flex; gap: 8px; flex-wrap: wrap; }
+.qc-btn { 
+  background: var(--surface); border: 1.5px solid var(--border); border-radius: 12px; 
+  padding: 8px 16px; font-size: var(--fs-small); font-weight: 600; cursor: pointer; transition: all .15s; font-family: inherit;
+  color: var(--text-muted);
+}
+.qc-btn:hover { background: var(--border); }
+.qc-btn.sel { background: #FFF5EC; border-color: var(--saffron); color: var(--saffron); font-weight: 700; }
+
+.price-range { display: flex; gap: 8px; }
+.price-opt {
+  flex: 1; background: var(--surface); border: 1.5px solid var(--border); border-radius: 12px;
+  padding: 10px 4px; text-align: center; cursor: pointer; transition: all .15s;
+}
+.price-opt:hover { background: var(--border); }
+.price-opt.sel { background: #FFF5EC; border-color: var(--saffron); }
+.po-val { font-size: 13px; font-weight: 800; color: var(--text-main); }
+.price-opt.sel .po-val { color: var(--saffron); }
+.po-lab { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+
+/* Form field tweaks */
+.modal-form-group {
+  margin-bottom: 16px;
+}
+.modal-field-label {
+  font-size: 12px; font-weight: 700; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;
+}
